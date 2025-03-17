@@ -22,11 +22,9 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () => context.go('/RegisterTodo'),
+      floatingActionButton: FloatingActionButton(onPressed: () => context.push('/RegisterTodo'),
         backgroundColor: Color(0xff64b5f6),
         child: Icon(Icons.add, color: Colors.white),),
     );
   }
-
-
 }

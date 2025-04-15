@@ -7,13 +7,23 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Text(Words.homeTitle),
+        backgroundColor: Color(0xff101010),
+        title: Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Text(
+              Words.homeTitle,
+              style: TextStyle(color: Colors.white),
+            )),
       ),
+      backgroundColor: Color(0xff101010),
       body: Column(
         children: [
-          MovieRankingSection()
+          Padding(
+            padding: EdgeInsets.only(top: 20),
+            child: MovieRankingSection(),
+          )
         ],
       ),
     );

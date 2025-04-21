@@ -1,12 +1,11 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:filmstack/dto/kofic_boxoffice_dto.dart';
 
 class KoficApiService {
   static const String _baseUrl = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?';
-  final String _apiKey;
-
-  KoficApiService(this._apiKey);
+  final String _apiKey = dotenv.get('koficApiKey');
 
   Future<List<KoficBoxofficeDto>> getDailyBoxOffice() async {
     try {
@@ -19,7 +18,6 @@ class KoficApiService {
         Uri.parse('$_baseUrl'
             'key=$_apiKey'
             '&targetDt=$targetDate'
-            '&itemPerPage=10' // 상위 10개 영화
         ),
       );
 
@@ -29,7 +27,7 @@ class KoficApiService {
         
         return boxOfficeList
             .map((json) => KoficBoxofficeDto.fromJson(json))
-            .toList();
+            .toList(); // 리스트로 변환(원래 Iterable타입임)
       } else {
         throw Exception('Failed to load box office data: ${response.statusCode}');
       }

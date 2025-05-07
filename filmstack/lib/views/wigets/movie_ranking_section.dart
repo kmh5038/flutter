@@ -1,3 +1,4 @@
+import 'package:filmstack/services/kofic_api_service.dart';
 import 'package:flutter/material.dart';
 
 class MovieRankingSection extends StatelessWidget {
@@ -5,6 +6,9 @@ class MovieRankingSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var movie = KoficApiService().getDailyBoxOffice();
+
+    print(movie);
     return Row(
       children: [
         Padding(

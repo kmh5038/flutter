@@ -1,19 +1,16 @@
-class KoficBoxofficeDto {
-  final String movieNm;
-  final String rank;
-  final String openDt;
-  final String audiAcc;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  KoficBoxofficeDto({
-    required this.movieNm,
-    required this.rank,
-    required this.openDt,
-    required this.audiAcc,
-  });
+part 'kofic_boxoffice_dto.freezed.dart';
+part 'kofic_boxoffice_dto.g.dart';
 
-  KoficBoxofficeDto.fromJson(Map<String, dynamic> json)
-  : movieNm = json['movieNm'],
-    rank = json['rank'],
-    openDt = json['openDt'],
-    audiAcc = json['audiAcc'];
+@freezed
+class KoficBoxofficeDto with _$KoficBoxofficeDto {
+  const factory KoficBoxofficeDto(
+      {required String movieNm,
+      required String rank,
+      required String openDt,
+      required String audiAcc}) = _KoficBoxofficeDto;
+
+  factory KoficBoxofficeDto.fromJson(Map<String, dynamic> json) =>
+      _$KoficBoxofficeDtoFromJson(json);
 }

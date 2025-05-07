@@ -1,0 +1,2 @@
+/Users/mac/Documents/GitHub/flutter/filmstack/android/app/.cxx/Debug/2b2ff3c1/x86_64/CMakeFiles/edit_cache.dir
+/Users/mac/Documents/GitHub/flutter/filmstack/android/app/.cxx/Debug/2b2ff3c1/x86_64/CMakeFiles/rebuild_cache.dir

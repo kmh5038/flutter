@@ -8,19 +8,37 @@ class MySimpleProfileCardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final String name = 'Liam';
+    final String job = 'Flutter developer';
+    final String country = 'soeul, south korea';
     return Scaffold(
-      appBar: AppBar(title: const Text('내 심플 프로필 카드')),
-      body: const Center(
-        child: Text(
-          '여기에 심플 프로필 카드를 만들어보세요!\n\n'
-          '목표:\n'
-          '• 원형 아바타 (이니셜)\n'
-          '• 이름 + 직업\n'
-          '• 위치 뱃지',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 16, height: 1.8, color: Colors.grey),
+        appBar: AppBar(
+          title: const Text('내 심플 프로필 카드'),
+          backgroundColor: colorScheme.inversePrimary,
         ),
-      ),
-    );
+        body: Center(
+          child: Container(
+            width: 300,
+            height: 300,
+            decoration: BoxDecoration(
+                color: Colors.indigoAccent, shape: BoxShape.rectangle),
+            child: Column(
+              children: [
+                Spacer(flex: 1),
+                Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                        color: Colors.deepPurpleAccent,
+                        shape: BoxShape.circle)),
+                SizedBox(height: 30),
+                Text(name),
+                Spacer(flex: 1)
+              ],
+            ),
+          ),
+        ));
   }
 }

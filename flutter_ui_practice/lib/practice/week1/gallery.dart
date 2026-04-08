@@ -20,7 +20,7 @@ class Week1PracticeGallery extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Week 1 내 연습'),
         centerTitle: true,
-        backgroundColor: theme.colorScheme.secondaryContainer,
+        backgroundColor: theme.colorScheme.inversePrimary,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -36,7 +36,8 @@ class Week1PracticeGallery extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Icon(Icons.lightbulb_outline, color: theme.colorScheme.tertiary),
+                Icon(Icons.lightbulb_outline,
+                    color: theme.colorScheme.tertiary),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
